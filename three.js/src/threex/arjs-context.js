@@ -73,7 +73,10 @@ const Context = function (parameters) {
     }
 }
 
-Object.assign(Context.prototype, THREE.EventDispatcher.prototype);
+Context.prototype.dispatchEvent = THREE.EventDispatcher.prototype.dispatchEvent;
+Context.prototype.addEventListener = THREE.EventDispatcher.prototype.addEventListener;
+Context.prototype.hasEventListener = THREE.EventDispatcher.prototype.hasEventListener;
+Context.prototype.removeEventListener = THREE.EventDispatcher.prototype.removeEventListener;
 
 // default to github page
 Context.baseURL = 'https://ar-js-org.github.io/AR.js/three.js/'
